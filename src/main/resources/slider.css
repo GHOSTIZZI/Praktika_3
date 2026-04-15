@@ -1,0 +1,56 @@
+.slider {
+    -fx-padding: 0;
+}
+
+.slider .track {
+    -fx-background-color: #2a2a2a;
+    -fx-background-radius: 5;
+    -fx-pref-height: 6;
+}
+
+.slider .thumb {
+    -fx-background-color: #1db954;
+    -fx-background-radius: 50%;
+    -fx-pref-width: 14;
+    -fx-pref-height: 14;
+}
+
+.slider:hover .track {
+    -fx-background-color: #3a3a3a;
+}
+
+.slider:hover .thumb {
+    -fx-background-color: #1ed760;
+}
+
+.slider .track {
+    -fx-background-insets: 0;
+}
+
+.slider .filled-track {
+    -fx-background-color: #1db954;
+    -fx-background-radius: 5;
+}
+.volume-slider .thumb {
+    -fx-background-color: #3498db;
+}
+
+.volume-slider .filled-track {
+    -fx-background-color: #3498db;
+}
+
+.progress-slider .thumb {
+    -fx-background-color: #1db954;
+}
+
+.progress-slider .filled-track {
+    -fx-background-color: #1db954;
+}
+.progress-slider:hover .filled-track {
+    -fx-background-color: #1ed760;
+}
+
+.volume-slider:hover .filled-track {
+    -fx-background-color: #5dade2;
+}
+

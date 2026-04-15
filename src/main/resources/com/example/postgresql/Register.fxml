@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane
+             style="-fx-padding: 20; -fx-background-color: #121212;"
+             xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.postgresql.RegisterController">
+    <children>
+        <VBox alignment="CENTER" spacing="24"
+              AnchorPane.topAnchor="40"
+              AnchorPane.bottomAnchor="40"
+              AnchorPane.leftAnchor="40"
+              AnchorPane.rightAnchor="40">
+
+            <Label text="Создание аккаунта"
+                   style="-fx-font-size: 20px; -fx-font-weight: 600; -fx-text-fill: #ffffff; -fx-font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;" />
+
+            <Label text="Введите логин и пароль"
+                   style="-fx-font-size: 14px; -fx-text-fill: #bbbbbb;" />
+
+            <TextField fx:id="newUsername"
+                       maxWidth="300"
+                       promptText="Логин"
+                       style="-fx-font-size: 14px; -fx-padding: 12 14; -fx-background-color: #1f1f1f; -fx-border-color: #333333; -fx-border-width: 1px; -fx-border-radius: 24px; -fx-background-radius: 24; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #777777;" />
+
+            <PasswordField fx:id="newPassword"
+                           maxWidth="300"
+                           promptText="Пароль"
+                           style="-fx-font-size: 14px; -fx-padding: 12 14; -fx-background-color: #1f1f1f; -fx-border-color: #333333; -fx-border-width: 1px; -fx-border-radius: 24px; -fx-background-radius: 24; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #777777;" />
+
+            <Button text="Создать аккаунт"
+                    maxWidth="200"
+                    onAction="#createAccount"
+                    style="-fx-font-size: 14px; -fx-padding: 12 24; -fx-background-color: #B388FF; -fx-text-fill: #0f0f0f; -fx-background-radius: 24; -fx-border-radius: 24px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(179,136,255,0.3), 4, 0, 0, 2);" />
+
+            <Button text="Назад"
+                    onAction="#openLoginForm"
+                    style="-fx-font-size: 13px; -fx-padding: 8 16; -fx-background-color: #333333; -fx-text-fill: #ffffff; -fx-background-radius: 24; -fx-border-radius: 30px; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);" />
+
+            <Label fx:id="registerStatusLabel"
+                   maxWidth="300"
+                   style="-fx-font-size: 13px; -fx-text-fill: #ff6b6b; -fx-alignment: center; -fx-wrap-text: true;" />
+        </VBox>
+    </children>
+</AnchorPane>

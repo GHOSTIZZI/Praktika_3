@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.postgresql.PlaylistController"
+      spacing="15"
+      style="-fx-padding:20; -fx-background-color:#0f0f0f;">
+
+    <!-- HEADER -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+
+
+        <Button text="←" onAction="#goBack"
+                style="
+                    -fx-font-size: 25px;
+                    -fx-padding: 9 16 9 16;
+                    -fx-text-fill: #ffffff;
+                    -fx-border-color: #ccc;
+                    -fx-border-width: 1px;
+                    -fx-background-radius: 50%;
+                    -fx-border-radius: 50%;
+                    -fx-cursor: hand;
+                    -fx-background-color: #0f0f0f;
+                "/>
+
+        <Label text="Плейлисты"
+               style="-fx-text-fill:white; -fx-font-size:22px; -fx-font-weight:bold;"/>
+
+    </HBox>
+
+    <!-- CREATE PLAYLIST -->
+    <HBox spacing="10">
+
+        <TextField fx:id="playlistTitleField"
+                   promptText="Название"
+                   style="-fx-background-color:#1a1a1a; -fx-text-fill:white; -fx-font-size:16px;"/>
+
+
+
+        <Button text="Создать"
+                onAction="#createPlaylist"
+                style="-fx-background-color:#2d2d2d; -fx-text-fill:white; -fx-font-size:16px;"/>
+
+    </HBox>
+
+    <!-- LIST -->
+
+
+        <FlowPane fx:id="playlistsPane"
+                  hgap="15"
+                  vgap="15"
+                  style="-fx-padding:5;"/>
+
+
+
+</VBox>

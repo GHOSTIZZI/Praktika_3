@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.postgresql.AdminPanelController"
+      spacing="20" style="-fx-padding: 20; -fx-background-color: #121212;">
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+
+        <Label text="Админ-панель" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #ffffff;"/>
+    </HBox>
+
+    <TabPane style="-fx-background-color: #0f0f0f; -fx-border-color: #333; -fx-border-width: 1px;">
+
+        <Tab text="Добавить трек">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <TextField fx:id="titleField" promptText="Название трека"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <TextField fx:id="authorIdField" promptText="ID Автора (число)"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <TextField fx:id="albumField" promptText="Альбом"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <TextField fx:id="genreField" promptText="Жанр"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <TextField fx:id="coverUrlField" promptText="Ссылка на обложку"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <TextField fx:id="audioUrlField" promptText="Ссылка на аудио"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <Button text="Добавить" onAction="#addTrack"
+                        style="-fx-background-color: #2d2d2d; -fx-text-fill: #ffffff; -fx-cursor: hand; -fx-background-radius: 6;"/>
+                <Label fx:id="statusLabel" textFill="green"/>
+            </VBox>
+        </Tab>
+        <Tab text="Пользователи">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <TableView fx:id="usersTable" style="-fx-background-color: #1a1a1a; -fx-control-inner-background: #1a1a1a; -fx-table-cell-border-color: #333; -fx-text-background-color: #ffffff;">
+                    <columns>
+                        <TableColumn text="ID" fx:id="colId">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Логин" fx:id="colLogin">
+                            <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Роль" fx:id="colRole">
+                            <cellValueFactory><PropertyValueFactory property="role"/></cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Button text="Удалить выбранного" onAction="#deleteSelectedUser"
+                        style="-fx-background-color: #2d2d2d; -fx-text-fill: #ffffff; -fx-cursor: hand; -fx-background-radius: 6;"/>
+            </VBox>
+        </Tab>
+
+
+        <Tab text="Треки">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <TableView fx:id="tracksTable" style="-fx-background-color: #1a1a1a; -fx-control-inner-background: #1a1a1a; -fx-table-cell-border-color: #333; -fx-text-background-color: #ffffff;">
+                    <columns>
+                        <TableColumn text="ID" fx:id="colTrackId">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Название" fx:id="colTrackTitle">
+                            <cellValueFactory><PropertyValueFactory property="title"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Исполнитель" fx:id="colTrackArtist">
+                            <cellValueFactory><PropertyValueFactory property="artist"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Жанр" fx:id="colTrackGenre">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Альбом" fx:id="colTrackAlbum">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Ссылка на обложку" fx:id="colTrackCover">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Ссылка на обложку" fx:id="colTrackAudio">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="ID исполнителя" fx:id="colTrackTrack">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+
+                    </columns>
+                </TableView>
+                <Button text="Удалить выбранный трек" onAction="#deleteSelectedTrack"
+                        style="-fx-background-color: #2d2d2d; -fx-text-fill: #ffffff; -fx-cursor: hand; -fx-background-radius: 6;"/>
+            </VBox>
+        </Tab>
+
+
+        <Tab text="Авторы">
+            <VBox spacing="10" style="-fx-padding: 10;">
+                <TextField fx:id="authorNameField" promptText="Имя автора / группа"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <TextField fx:id="authorPhotoUrlField" promptText="Ссылка на фото (URL или локальный путь)"
+                           style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <Button text="Добавить автора" onAction="#addAuthor"
+                        style="-fx-background-color: #2d2d2d; -fx-text-fill: #ffffff; -fx-cursor: hand; -fx-background-radius: 6;"/>
+                <Label fx:id="authorStatusLabel" textFill="green"/>
+
+                <TableView fx:id="authorsTable" VBox.vgrow="ALWAYS"
+                           style="-fx-background-color: #1a1a1a; -fx-control-inner-background: #1a1a1a; -fx-table-cell-border-color: #333; -fx-text-background-color: #ffffff;">
+                    <columns>
+                        <TableColumn text="ID">
+                            <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Имя">
+                            <cellValueFactory><PropertyValueFactory property="name"/></cellValueFactory>
+                        </TableColumn>
+                        <TableColumn text="Фото URL" minWidth="200">
+                            <cellValueFactory><PropertyValueFactory property="photoUrl"/></cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+
+                <Button text="Удалить выбранного автора" onAction="#deleteSelectedAuthor"
+                        style="-fx-background-color: #2d2d2d; -fx-text-fill: #ffffff; -fx-cursor: hand; -fx-background-radius: 6;"/>
+            </VBox>
+        </Tab>
+        <Tab text="Радио">
+            <VBox spacing="10" style="-fx-padding: 10;">
+
+                <TextField fx:id="radioNameField"
+                           promptText="Название радиостанции" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <TextField fx:id="radioStreamField"
+                           promptText="Ссылка на поток (stream URL)" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <TextField fx:id="radioCoverField"
+                           promptText="Ссылка на обложку" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <Button text="Добавить радиостанцию"
+                        onAction="#addRadioStation" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <Label fx:id="radioStatusLabel"/>
+
+                <TableView fx:id="radioTable" style="-fx-background-color: #1a1a1a; -fx-control-inner-background: #1a1a1a; -fx-table-cell-border-color: #333; -fx-text-background-color: #ffffff;">
+                    <columns>
+                        <TableColumn fx:id="colRadioId" text="ID" />
+                        <TableColumn fx:id="colRadioName" text="Название"/>
+                        <TableColumn fx:id="colRadioStream" text="Stream URL"/>
+                        <TableColumn fx:id="colRadioCover" text="Обложка"/>
+                    </columns>
+                </TableView>
+
+                <Button text="Удалить выбранную радиостанцию"
+                        onAction="#deleteSelectedRadio" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+            </VBox>
+        </Tab>
+        <Tab text="Плейлисты" >
+            <VBox spacing="10" style="-fx-padding:10;" >
+
+                <TextField fx:id="albumTitleField"
+                           promptText="Название плейлиста" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <TextField fx:id="albumCoverField"
+                           promptText="Cover URL" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <ListView fx:id="albumTracksList"
+                          prefHeight="300"
+                          style="-fx-background-color: #121212; -fx-control-inner-background: #121212;"/>
+
+                <Button text="Создать альбом"
+                        onAction="#createAdminAlbum" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <ComboBox fx:id="existingAlbumsBox" style="-fx-background-color: #1a1a1a; -fx-text-fill: black; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <Button text="Добавить трек в альбом" onAction="#addTrackToExistingAlbum" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+                <Label fx:id="albumStatusLabel" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+
+            </VBox>
+        </Tab>
+
+
+    </TabPane>
+</VBox>

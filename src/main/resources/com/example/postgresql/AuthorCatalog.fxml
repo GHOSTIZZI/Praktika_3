@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.postgresql.PlaylistViewController"
+      spacing="20"
+      style="-fx-padding: 20; -fx-background-color: #0f0f0f;">
+
+    <!-- HEADER -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+
+        <Button text="←" onAction="#goBack"
+                style="
+                    -fx-font-size: 25px;
+                    -fx-padding: 9 16 9 16;
+                    -fx-text-fill: #ffffff;
+                    -fx-border-color: #ccc;
+                    -fx-border-width: 1px;
+                    -fx-background-radius: 50%;
+                    -fx-border-radius: 50%;
+                    -fx-cursor: hand;
+                    -fx-background-color: #0f0f0f;
+                "/>
+
+        <Label fx:id="playlistTitle"
+               text="Плейлист"
+               style="-fx-font-size: 22px; -fx-text-fill: #ffffff; -fx-font-weight: bold;"
+               alignment="CENTER"/>
+    </HBox>
+
+    <!-- TRACKS LIST -->
+    <ScrollPane fitToWidth="true"
+                VBox.vgrow="ALWAYS"
+                style="-fx-background: #0f0f0f; -fx-background-color: #0f0f0f;">
+
+        <VBox fx:id="tracksContainer"
+              spacing="10"
+              style="-fx-padding: 5;"/>
+    </ScrollPane>
+
+</VBox>

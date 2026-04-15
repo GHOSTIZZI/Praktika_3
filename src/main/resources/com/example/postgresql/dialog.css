@@ -1,0 +1,35 @@
+.dialog-pane {
+    -fx-background-color: #121212;
+    -fx-border-color: #333333;
+    -fx-border-width: 1px;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.combo-box {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #1e1e1e;
+}
+
+.button {
+  -fx-background-color: #B388FF;
+   -fx-text-fill: #0f0f0f;
+    -fx-background-radius: 8px;
+}
+
+.button.cancel-button {
+    -fx-background-color: #2a2a2a;
+}
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.postgresql.TrackCatalogController"
+      spacing="20"
+      style="-fx-padding: 20; -fx-background-color: #0f0f0f;">
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Button text="←" onAction="#goBack"
+                style="
+                    -fx-font-size: 25px;
+                    -fx-padding: 9 16 9 16;
+                    -fx-text-fill: #ffffff;
+                    -fx-border-color: #ccc;
+                    -fx-border-width: 1px;
+                    -fx-background-radius: 50%;
+                    -fx-border-radius: 50%;
+                    -fx-cursor: hand;
+                    -fx-background-color: #0f0f0f;
+                "/>
+        <Label text="Каталог"
+               style="-fx-font-size: 24px; -fx-text-fill: #ffffff; -fx-font-weight: bold;"
+               HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+        <FlowPane fx:id="fullTrackFlowPane"
+                  hgap="20" vgap="20"
+                  alignment="TOP_LEFT"
+                  style="-fx-padding: 5;">
+        </FlowPane>
+
+</VBox>
+
+

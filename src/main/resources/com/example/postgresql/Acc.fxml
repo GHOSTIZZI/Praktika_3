@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.postgresql.AccController"
+      spacing="20"
+      alignment="TOP_CENTER"
+      style="-fx-padding: 20;-fx-background-color:  #0f0f0f;">
+
+    <HBox spacing="12" alignment="CENTER_LEFT" style="-fx-pref-width: 100%;">
+        <Button text="←"
+                onAction="#goBack"
+                style="
+    -fx-font-size: 25px;
+    -fx-padding: 9 16 9 16;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-cursor: hand;
+    -fx-background-color: #0f0f0f;"/>
+        <Label text="Аккаунт"
+               style="-fx-font-size: 22px; -fx-text-fill: #ffffff; -fx-font-weight: bold;"
+               alignment="CENTER"/>
+
+        </HBox>
+    <ImageView fx:id="avatarImage"
+               fitWidth="400"
+               fitHeight="400"
+               preserveRatio="true"
+               style="-fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.1), 10, 0, 0, 0);"/>
+
+    <Label fx:id="loginLabel" text="[Загрузка логина]" style="-fx-font-size: 28px; -fx-text-fill: #ffffff; -fx-font-weight: bold;" />
+
+    <Button onAction="#handleLogout" style="-fx-background-color: transparent;">
+        <graphic>
+            <ImageView fx:id="logoutIcon" fitWidth="35" fitHeight="35"/>
+        </graphic>
+    </Button>
+</VBox>

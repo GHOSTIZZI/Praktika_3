@@ -1,0 +1,39 @@
+.favorite-added, .favorite-not-added {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.favorite-added:hover, .favorite-not-added:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+.volume-slider .track {
+    -fx-background-color: #404040;
+    -fx-pref-height: 4px;
+}
+
+.volume-slider .thumb {
+    -fx-background-color: white;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+.progress-slider .track {
+    -fx-background-color: #404040;
+    -fx-pref-height: 4px;
+}
+
+.progress-slider .thumb {
+    -fx-background-color: white;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+
+#artistLabel {
+    -fx-text-fill: #b3b3b3;
+    -fx-cursor: hand;
+}
+
+#artistLabel:hover {
+   -fx-background-color: rgba(255, 255, 255, 0.1);
+}

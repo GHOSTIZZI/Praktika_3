@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+
+      spacing="20"
+      style="-fx-padding: 20; -fx-background-color: #0f0f0f;"   fx:controller="com.example.postgresql.IzbranController">
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+
+        <Button text="←"
+                onAction="#goBack"
+                style="
+                    -fx-font-size: 25px;
+                    -fx-padding: 9 16 9 16;
+                    -fx-text-fill: #ffffff;
+                    -fx-border-color: #ccc;
+                    -fx-border-width: 1px;
+                    -fx-background-radius: 50%;
+                    -fx-border-radius: 50%;
+                    -fx-cursor: hand;
+                    -fx-background-color: #0f0f0f;
+                "
+        />
+        <Label text="Избранное"
+               style="-fx-font-size: 22px; -fx-text-fill: #ffffff; -fx-font-weight: bold;"/>
+
+        <HBox HBox.hgrow="ALWAYS" alignment="CENTER_RIGHT" spacing="10">
+
+            <Label text="Сортировать по:" style="-fx-font-size: 14px; -fx-text-fill: #b3b3b3;"/>
+
+            <ChoiceBox fx:id="sortChoiceBox"
+                       onAction="#handleSortChange"
+                       prefWidth="200"
+                       style="-fx-background-color: #1a1a1a; -fx-mark-color: white; -fx-text-fill: white;"
+            />
+
+        </HBox>
+
+    </HBox>
+        <VBox fx:id="favoriteTracksVBox" spacing="10" style="-fx-padding: 5; -fx-background-color: #0f0f0f;">
+            <FlowPane fx:id="favoriteTracksPane" hgap="15" vgap="15"/>
+        </VBox>
+
+</VBox>
+
+
