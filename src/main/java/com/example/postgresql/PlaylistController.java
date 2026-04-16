@@ -5,8 +5,6 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.control.TextField;
 import javafx.application.Platform;
 
-import java.util.List;
-import java.util.function.Consumer;
 
 public class PlaylistController {
 

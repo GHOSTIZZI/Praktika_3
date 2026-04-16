@@ -815,23 +815,21 @@ public class Form1 {
     private void openPlaylists() {
         stopCurrentTrack();
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("playlist_view_main.fxml")
-            );
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("playlist_view_main.fxml"));
             Parent root = loader.load();
-
             PlaylistController controller = loader.getController();
             controller.setMainController(this);
             controller.loadUserPlaylists(getCurrentUserId());
-
             rootContainer.setCenter(root);
-
         } catch (Exception e) {
             e.printStackTrace();
             showError("Ошибка открытия плейлистов: " + e.getMessage());
         }
     }
+
+
+
+
 
     @FXML
     private ImageView LibraryImage;
