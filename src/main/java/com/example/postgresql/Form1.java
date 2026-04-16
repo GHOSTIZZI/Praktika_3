@@ -867,20 +867,12 @@ public class Form1 {
         stopCurrentTrack();
 
         try {
-            FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("featured_playlists.fxml")
-            );
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("featured_playlists.fxml"));
             Parent root = loader.load();
-
-            FeaturedPlaylistsController controller =
-                    loader.getController();
-
+            FeaturedPlaylistsController controller = loader.getController();
             controller.setMainController(this);
             controller.loadFeaturedPlaylists();
-
             rootContainer.setCenter(root);
-
         } catch (Exception e) {
             e.printStackTrace();
             showError("Ошибка открытия плейлистов");

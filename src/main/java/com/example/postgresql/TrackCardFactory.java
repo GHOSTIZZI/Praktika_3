@@ -28,8 +28,8 @@ public class TrackCardFactory {
         );
 
         ImageView cover = new ImageView();
-        cover.setFitWidth(60);
-        cover.setFitHeight(60);
+        cover.setFitWidth(80);
+        cover.setFitHeight(80);
 
         if (track.getCoverUrl() != null && !track.getCoverUrl().isEmpty()) {
             try {

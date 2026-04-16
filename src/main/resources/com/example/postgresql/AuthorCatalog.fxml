@@ -9,7 +9,6 @@
       spacing="20"
       style="-fx-padding: 20; -fx-background-color: #0f0f0f;">
 
-    <!-- HEADER -->
     <HBox spacing="12" alignment="CENTER_LEFT">
 
         <Button text="←" onAction="#goBack"
@@ -31,7 +30,6 @@
                alignment="CENTER"/>
     </HBox>
 
-    <!-- TRACKS LIST -->
     <ScrollPane fitToWidth="true"
                 VBox.vgrow="ALWAYS"
                 style="-fx-background: #0f0f0f; -fx-background-color: #0f0f0f;">
