@@ -45,10 +45,6 @@ public class Track {
         this.genre = genre;
     }
 
-    // ===================================
-    // СПЕЦИАЛЬНЫЙ СЕТТЕР ДЛЯ ДЕСЕРИАЛИЗАЦИИ АВТОРА
-    // ===================================
-
 
     @JsonProperty("author")
     public void setAuthorObject(JsonNode authorNode) {
@@ -60,9 +56,6 @@ public class Track {
         }
     }
 
-    // ===================================
-    // ГЕТТЕРЫ И СЕТТЕРЫ
-    // ===================================
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }

@@ -19,9 +19,6 @@ public class PlaylistController {
         this.mainController = controller;
     }
 
-
-
-
     public void loadUserPlaylists(int userId) {
         playlistService.loadUserPlaylists(userId)
                 .thenAccept(playlists -> Platform.runLater(() ->
@@ -34,7 +31,6 @@ public class PlaylistController {
                 ));
     }
 
-
     private void deletePlaylist(Playlist playlist) {
         playlistService.deletePlaylist(playlist.getId())
                 .thenAccept(success -> Platform.runLater(() -> {
@@ -46,9 +42,6 @@ public class PlaylistController {
                 }));
     }
 
-
-
-    // создание плейлиста
     @FXML
     private void createPlaylist() {
         int userId = mainController.getCurrentUserId();
@@ -62,7 +55,6 @@ public class PlaylistController {
         });
     }
 
-    // открыть плейлист
     private void openPlaylist(Playlist playlist) {
         if (mainController != null) {
             mainController.openPlaylistView(playlist);

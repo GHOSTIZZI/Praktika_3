@@ -19,9 +19,7 @@ import java.util.concurrent.CompletableFuture;
 public abstract class SupabaseDAO {
 
 
-    //public static final String SUPABASE_URL = "https://xxatkzdplbgnuibdykyd.supabase.co/rest/v1";
     public static final String SUPABASE_URL =  "https://drtawqvwgdtmljytomad.supabase.co/rest/v1";
-    //private static final String SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4YXRremRwbGJnbnVpYmR5a3lkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0MTI0MjEsImV4cCI6MjA3ODk4ODQyMX0.svFtSKnqmarh3TiybOjJYQ_t0sZ_vUv8D9Q2QUcdxkk";
     private static final String SUPABASE_ANON_KEY = "sb_publishable_9QholS-khKzUoH4jyg2vrg_X0NXh8tT";
     protected final HttpClient httpClient;
     protected final ObjectMapper objectMapper;
@@ -75,9 +73,7 @@ public abstract class SupabaseDAO {
         new RuntimeException(message).printStackTrace();
     }
 
-    // =========================================================================
-    // 2. УНИВЕРСАЛЬНЫЕ МЕТОДЫ GET (ПОЛУЧЕНИЕ СПИСКА)
-    // =========================================================================
+
 
     protected <T> CompletableFuture<List<T>> sendAndDeserializeList(
             HttpRequest request,
@@ -108,9 +104,6 @@ public abstract class SupabaseDAO {
                 });
     }
 
-    // =========================================================================
-    // 3. УНИВЕРСАЛЬНЫЕ МЕТОДЫ МОДИФИКАЦИИ (POST, PATCH, DELETE)
-    // =========================================================================
 
     protected CompletableFuture<Boolean> sendPostRequest(String path, ObjectNode jsonBody, String operation) {
         HttpRequest request = createBaseRequestBuilder(path)

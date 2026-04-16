@@ -39,10 +39,6 @@ public class IzbranController {
     private ImageView favoriteFillIcon;
     private ImageView favoriteUnfillIcon;
 
-    //---------------------------------------------------------
-    // Инициализация и Сеттеры
-    //---------------------------------------------------------
-
     @FXML
     public void initialize() {
         sortOptions.put("По названию песни (А-Я)", "title.asc");
@@ -67,10 +63,6 @@ public class IzbranController {
         this.mainController = controller;
         loadFavoriteTracks();
     }
-
-    //---------------------------------------------------------
-    // Основная логика загрузки и сортировки
-    //---------------------------------------------------------
 
     private void loadFavoriteTracks() {
         if (mainController == null) return;
@@ -153,10 +145,6 @@ public class IzbranController {
         return tracks;
     }
 
-
-    //---------------------------------------------------------
-    // Создание карточки и Удаление
-    //---------------------------------------------------------
 
     private HBox createFavoriteCard(Track track, int userId) {
         HBox card = new HBox(10);
@@ -243,10 +231,6 @@ public class IzbranController {
         card.getChildren().addAll(cover, infoBox, removeButton);
         return card;
     }
-
-    //---------------------------------------------------------
-    // Утилиты и Навигация
-    //---------------------------------------------------------
 
     private void showError(String message) {
         Platform.runLater(() -> {

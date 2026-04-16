@@ -168,7 +168,7 @@
                 <Button text="Создать альбом"
                         onAction="#createAdminAlbum" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
                 <ComboBox fx:id="existingAlbumsBox" style="-fx-background-color: #1a1a1a; -fx-text-fill: black; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
-                <Button text="Добавить трек в альбом" onAction="#addTrackToExistingAlbum" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
+                <Button text="Добавить трек в плейлист" onAction="#addTrackToExistingAlbum" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
 
                 <Label fx:id="albumStatusLabel" style="-fx-background-color: #1a1a1a; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #888; -fx-background-radius: 6;"/>
 

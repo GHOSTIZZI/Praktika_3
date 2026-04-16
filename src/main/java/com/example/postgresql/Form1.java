@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
+
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
@@ -26,16 +27,22 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 
-
 public class Form1 {
 
-    @FXML private FlowPane musicCardsPane;
-    @FXML private BorderPane rootContainer;
-    @FXML private TextField searchField;
-    @FXML private FlowPane authorsPane;
-    @FXML private VBox mainContent;
-    @FXML private Label adminPanelBtn;
-    @FXML private FlowPane radioCardsPane;
+    @FXML
+    private FlowPane musicCardsPane;
+    @FXML
+    private BorderPane rootContainer;
+    @FXML
+    private TextField searchField;
+    @FXML
+    private FlowPane authorsPane;
+    @FXML
+    private VBox mainContent;
+    @FXML
+    private Label adminPanelBtn;
+    @FXML
+    private FlowPane radioCardsPane;
 
     private final TrackDAO trackDAO = new TrackDAO();
     private final AuthorDAO authorDAO = new AuthorDAO();
@@ -57,9 +64,17 @@ public class Form1 {
     // Сеттеры и Инициализация
     //---------------------------------------------------------
 
-    public BorderPane getRootContainer() { return rootContainer; }
-    public int getCurrentUserId() { return currentUserId; }
-    public String getCurrentUserLogin() { return currentUserLogin; }
+    public BorderPane getRootContainer() {
+        return rootContainer;
+    }
+
+    public int getCurrentUserId() {
+        return currentUserId;
+    }
+
+    public String getCurrentUserLogin() {
+        return currentUserLogin;
+    }
 
     public void setCurrentUser(int id, String login, String role) {
         this.currentUserId = id;
@@ -746,7 +761,7 @@ public class Form1 {
 
 
     }
-    
+
     private static final int MAIN_PAGE_LIMIT = 9;
 
     public void renderMainTracks(List<Track> tracks) {
@@ -764,6 +779,7 @@ public class Form1 {
 
     @FXML
     private ImageView FavoriteImage;
+
     private void loadfavoriteImage() {
         try {
             Image defaultAvatar = new Image(getClass().getResourceAsStream("/images/favorite.png"));
@@ -775,6 +791,7 @@ public class Form1 {
 
     @FXML
     private ImageView AccImage;
+
     private void loadAccImage() {
         try {
             Image defaultAvatar = new Image(getClass().getResourceAsStream("/images/account.png"));
@@ -823,6 +840,7 @@ public class Form1 {
 
     @FXML
     private ImageView LibraryImage;
+
     private void loadPlaylistImage() {
         try {
             Image playtest = new Image(getClass().getResourceAsStream("/images/library.png"));
@@ -834,6 +852,7 @@ public class Form1 {
 
     @FXML
     private ImageView LogoutImage;
+
     private void loadpowerImage() {
         try {
             Image playtest = new Image(getClass().getResourceAsStream("/images/power.png"));
@@ -882,7 +901,6 @@ public class Form1 {
                         )
                 ));
     }
-
 
 
     public boolean isAdmin() {

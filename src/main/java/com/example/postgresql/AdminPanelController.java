@@ -434,35 +434,6 @@ public class AdminPanelController {
                     }
                 }));
     }
-
-    @FXML
-    private void deleteSelectedRadio() {
-        RadioStation selected =
-                radioTable.getSelectionModel().getSelectedItem();
-
-        if (selected == null) {
-            mainController.showError("Выберите радиостанцию");
-            return;
-        }
-
-        radioDAO.deleteStation(selected.getId())
-                .thenAccept(success -> Platform.runLater(() -> {
-                    if (success) {
-                        mainController.showAlert("Успех", "Радиостанция удалена");
-                        loadRadioTable();
-                        mainController.refreshRadios();
-                    } else {
-                        mainController.showError("Не удалось удалить радиостанцию");
-                    }
-                }));
-    }
-    private void loadTracksForAlbumCreation() {
-        trackDAO.getAllTracks()
-                .thenAccept(tracks ->
-                        Platform.runLater(() ->
-                                albumTracksList.getItems().setAll(tracks)));
-    }
-
     @FXML
     private void createAdminAlbum() {
 
@@ -487,10 +458,7 @@ public class AdminPanelController {
                                 albumCoverField.clear();
                                 albumTracksList.getSelectionModel().clearSelection();
 
-                                // обновить список треков заново
                                 loadTracksForAlbumCreation();
-
-                                // обновить featured playlists на главном экране
                                 if (mainController != null) {
                                     mainController.openFeaturedPlaylists();
                                 }
@@ -533,5 +501,35 @@ public class AdminPanelController {
                             }
                         }));
     }
+
+
+    @FXML
+    private void deleteSelectedRadio() {
+        RadioStation selected =
+                radioTable.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            mainController.showError("Выберите радиостанцию");
+            return;
+        }
+
+        radioDAO.deleteStation(selected.getId())
+                .thenAccept(success -> Platform.runLater(() -> {
+                    if (success) {
+                        mainController.showAlert("Успех", "Радиостанция удалена");
+                        loadRadioTable();
+                        mainController.refreshRadios();
+                    } else {
+                        mainController.showError("Не удалось удалить радиостанцию");
+                    }
+                }));
+    }
+    private void loadTracksForAlbumCreation() {
+        trackDAO.getAllTracks()
+                .thenAccept(tracks ->
+                        Platform.runLater(() ->
+                                albumTracksList.getItems().setAll(tracks)));
+    }
+
 
 }

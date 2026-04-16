@@ -75,10 +75,7 @@ public class TrackCardFactory {
             row = new HBox(20, cover, info, spacer);
         }
         card.getChildren().add(row);
-
-        // клик по карточке → открыть
         card.setOnMouseClicked(e -> onOpen.accept(track));
-
         return card;
     }
 }
