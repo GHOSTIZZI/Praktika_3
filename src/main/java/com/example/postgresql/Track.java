@@ -32,7 +32,7 @@ public class Track {
     }
 
 
-    public Track(int id, String title, String artist, String duration, String coverUrl, String trackUrl, int authorId, String album, String genre) {
+    public Track(int id, String title, String artist, String coverUrl, String trackUrl, int authorId, String album, String genre) {
         this.id = id;
         this.title = title;
         this.artist = artist;
@@ -49,7 +49,6 @@ public class Track {
     @JsonProperty("author")
     public void setAuthorObject(JsonNode authorNode) {
         if (authorNode != null && authorNode.has("name")) {
-            // Извлекаем текстовое значение 'name' из вложенного JSON-узла
             this.artist = authorNode.get("name").asText();
         } else {
             this.artist = "Неизвестный автор";
