@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.application.Platform;
-
 import java.util.List;
 
 public class PlaylistViewController {
@@ -53,7 +52,7 @@ public class PlaylistViewController {
                         );
                     }
 
-                    this.currentPlaylistTracks = tracks; // 🔥 ВАЖНО
+                    this.currentPlaylistTracks = tracks;
                 }));
     }
 
@@ -71,7 +70,7 @@ public class PlaylistViewController {
         service.removeTrack(playlist.getId(), track.getId())
                 .thenAccept(success -> Platform.runLater(() -> {
                     if (success) {
-                        loadTracks(); // обновить список
+                        loadTracks();
                     } else {
                         mainController.showError("Не удалось удалить трек");
                     }

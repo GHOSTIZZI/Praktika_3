@@ -785,11 +785,6 @@ public class Form1 {
     }
 
 
-
-
-
-
-
     public void openPlaylistView(Playlist playlist) {
         stopCurrentTrack();
         try {
@@ -809,8 +804,6 @@ public class Form1 {
     }
 
 
-
-
     @FXML
     private void openPlaylists() {
         stopCurrentTrack();
@@ -826,9 +819,6 @@ public class Form1 {
             showError("Ошибка открытия плейлистов: " + e.getMessage());
         }
     }
-
-
-
 
 
     @FXML

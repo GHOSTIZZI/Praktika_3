@@ -10,7 +10,6 @@ public class PlaylistRenderer {
             Consumer<Playlist> onDelete
     ) {
         container.getChildren().clear();
-
         for (Playlist p : playlists) {
             container.getChildren().add(PlaylistCardFactory.create(p, onOpen, onDelete));
         }
